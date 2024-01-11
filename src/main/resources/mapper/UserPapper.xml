@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pactera.learn.spring.mapper.UserMapper">
+    <resultMap type="com.pactera.learn.spring.model.vo.UserDataVO" id="userResult">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="email" column="email"/>
+        <result property="avatar" column="avatar"/>
+    </resultMap>
+
+    <sql id="selectUserSql">
+        SELECT *
+        FROM user
+    </sql>
+
+    <select id="getUser" parameterType="long" resultMap="userResult">
+        <include refid="selectUserSql"/>
+        WHERE id = #{id}
+    </select>
+
+    <select id="getUserList" parameterType="com.pactera.learn.spring.model.dto.UserDataDTO" resultMap="userResult">
+        <include refid="selectUserSql"/>
+        -- SELECT *
+        -- FROM user
+        WHERE 1 = 1
+        <if test="req.id != null and req.id != ''">
+            AND id = #{req.id}
+        </if>
+        <if test="req.name != null and req.name != ''">
+            <bind name="nameLike" value="'%' + req.name + '%'"/>
+            AND name LIKE #{nameLike}
+        </if>
+        <if test="req.age != null and req.age != ''">
+            AND age IN
+            <foreach item="item" collection="req.age" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="req.email != null and req.email != ''">
+            AND email = #{req.email}
+        </if>
+        <if test="req.avatar != null and req.avatar != ''">
+            AND avatar = #{req.avatar}
+        </if>
+    </select>
+
+    <insert id="insertUser"
+            parameterType="com.pactera.learn.spring.model.entity.User"
+            useGeneratedKeys="true"
+            keyProperty="user.id">
+        INSERT INTO user (name, age, email, avatar) VALUE
+            (#{user.name}, #{user.age}, #{user.email}, #{user.avatar})
+    </insert>
+
+    <insert id="insertUsers"
+            parameterType="com.pactera.learn.spring.model.entity.User"
+            useGeneratedKeys="true">
+        INSERT INTO user (name, age, email, avatar) VALUES
+        <foreach item="user" collection="userList" separator=",">
+            (#{user.name}, #{user.age}, #{user.email}, #{user.avatar})
+        </foreach>
+    </insert>
+
+    <update id="updateUser"
+            parameterType="com.pactera.learn.spring.model.entity.User"
+            useGeneratedKeys="true"
+            keyProperty="user.id">
+        UPDATE user
+        SET name   = #{user.name},
+            age    = #{user.age},
+            email  = #{user.email},
+            avatar = #{user.avatar}
+        WHERE id = #{user.id}
+    </update>
+
+    <delete id="deleteUser"
+            parameterType="long">
+        DELETE
+        FROM user
+        WHERE id = #{id}
+    </delete>
+</mapper>
