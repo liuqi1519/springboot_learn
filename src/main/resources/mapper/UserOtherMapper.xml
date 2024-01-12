@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pactera.learn.spring.mapper.UserOtherMapper">
+    <resultMap type="com.pactera.learn.spring.model.vo.UserOtherDataVO" id="userOtherResult">
+        <result property="id" column="id"/>
+        <result property="user_id" column="user_id"/>
+        <result property="student_id" column="student_id"/>
+        <result property="id_card" column="id_card"/>
+    </resultMap>
+
+    <sql id="selectUserOtherSql">
+        SELECT *
+        FROM user
+    </sql>
+
+    <select id="getUserOther" parameterType="long" resultMap="userOtherResult">
+        <include refid="selectUserOtherSql"/>
+        WHERE id = #{id}
+    </select>
+
+    <select id="getUserOtherList" parameterType="com.pactera.learn.spring.model.dto.UserOtherDataDTO" resultMap="userOtherResult">
+        <include refid="selectUserOtherSql"/>
+        -- SELECT *
+        -- FROM user_other
+        WHERE 1 = 1
+        <if test="req.id != null and req.id != ''">
+            AND id = #{req.id}
+        </if>
+        <if test="req.studentId != null and req.studentId != ''">
+            AND student_id = #{req.studentId}
+        </if>
+        <if test="req.idCard != null and req.idCard != ''">
+            AND id_card = #{req.idCard}
+        </if>
+    </select>
+
+    <insert id="insertUserOther"
+            parameterType="com.pactera.learn.spring.model.entity.UserOther"
+            useGeneratedKeys="true"
+            keyProperty="userOther.id">
+        INSERT INTO user_other (user_id, student_id, id_card) VALUE
+            (#{userOther.userId}, #{userOther.studentId}, #{userOther.idCard})
+    </insert>
+
+    <insert id="insertUserOthers"
+            parameterType="com.pactera.learn.spring.model.entity.UserOther"
+            useGeneratedKeys="true">
+        INSERT INTO user_other (user_id, student_id, id_card) VALUES
+        <foreach item="userOther" collection="userOtherList" separator=",">
+            (#{userOther.userId}, #{userOther.studentId}, #{userOther.idCard})
+        </foreach>
+    </insert>
+
+    <update id="updateUserOther"
+            parameterType="com.pactera.learn.spring.model.entity.UserOther"
+            useGeneratedKeys="true"
+            keyProperty="userOther.id">
+        UPDATE user_other
+        <set>
+            <if test="userOther.userId != null and userOther.userId != ''">
+                user_id = #{userOther.userId},
+            </if>
+            <if test="userOther.studentId != null and userOther.studentId != ''">
+                student_id = #{userOther.studentId},
+            </if>
+            <if test="userOther.idCard != null and userOther.idCard != ''">
+                id_card = #{userOther.idCard}
+            </if>
+        </set>
+        WHERE id = #{userOther.id}
+    </update>
+
+    <delete id="deleteUserOther"
+            parameterType="long">
+        DELETE
+        FROM user_other
+        WHERE id = #{id}
+    </delete>
+</mapper>

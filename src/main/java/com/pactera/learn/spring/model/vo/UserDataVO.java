@@ -7,11 +7,17 @@ public class UserDataVO {
     /** 姓名 */
     private String name;
     /** 年龄 */
-    private int age;
+    private Integer age;
     /** 邮箱 */
     private String email;
     /** 头像 */
     private String avatar;
+    /** USER ID */
+    private Long userOtherId;
+    /** 学号 */
+    private String studentId;
+    /** 身份证号 */
+    private String idCard;
 
     public Long getId() {
         return id;
@@ -29,11 +35,11 @@ public class UserDataVO {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -51,5 +57,43 @@ public class UserDataVO {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Long getUserOtherId() {
+        return userOtherId;
+    }
+
+    public void setUserOtherId(Long userOtherId) {
+        this.userOtherId = userOtherId;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDataVO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", userOtherId=" + userOtherId +
+                ", studentId='" + studentId + '\'' +
+                ", idCard='" + idCard + '\'' +
+                '}';
     }
 }

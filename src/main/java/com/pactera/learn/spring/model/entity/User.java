@@ -1,16 +1,14 @@
 package com.pactera.learn.spring.model.entity;
 
-import lombok.Data;
 
-@Data
 public class User {
 
-    /** 逐渐ID */
+    /** 主键ID */
     private Long id;
     /** 姓名 */
     private String name;
     /** 年龄 */
-    private int age;
+    private Integer age;
     /** 邮箱 */
     private String email;
     /** 头像 */
@@ -32,11 +30,11 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

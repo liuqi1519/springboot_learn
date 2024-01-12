@@ -7,7 +7,7 @@ public class UserDataDTO {
     /** 姓名 */
     private String name;
     /** 年龄 */
-    private int age;
+    private Integer age;
     /** 邮箱 */
     private String email;
     /** 头像 */
@@ -29,11 +29,11 @@ public class UserDataDTO {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

@@ -19,27 +19,27 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     @Override
-    public UserDataVO getUser(Long id){
+    public UserDataVO getUser(Long id) {
         return userMapper.getUser(id);
     }
 
     @Override
-    public List<UserDataVO> getUserList(UserDataDTO dto){
+    public List<UserDataVO> getUserList(UserDataDTO dto) {
         return userMapper.getUserList(dto);
     }
 
     @Override
-    public Boolean insertUser(UserDataDTO dto){
+    public Boolean insertUser(UserDataDTO dto) {
         User user = new User();
         BeanUtils.copyProperties(dto, user);
         return userMapper.insertUser(user) > 0;
     }
 
     @Override
-    public Boolean insertUsers(List<UserDataDTO> dtoList){
+    public Boolean insertUsers(List<UserDataDTO> dtoList) {
         List<User> userList = new ArrayList<User>();
         Iterator<UserDataDTO> iterator = dtoList.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             UserDataDTO dto = iterator.next();
             User user = new User();
             BeanUtils.copyProperties(dto, user);
@@ -49,14 +49,19 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Boolean updateUser(UserDataDTO dto){
+    public Boolean updateUser(UserDataDTO dto) {
         User user = new User();
         BeanUtils.copyProperties(dto, user);
         return userMapper.updateUser(user) > 0;
     }
 
     @Override
-    public Boolean deleteUser(Long id){
+    public Boolean deleteUser(Long id) {
         return userMapper.deleteUser(id) > 0;
+    }
+
+    @Override
+    public UserDataVO getUserLeftJoinUserOther(Long id) {
+        return userMapper.getUserLeftJoinUserOther(id);
     }
 }

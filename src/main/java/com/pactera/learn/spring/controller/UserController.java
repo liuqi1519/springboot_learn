@@ -75,4 +75,13 @@ public class UserController {
         return userService.deleteUser(id);
     }
 
+    /**
+     * 获取用户详细信息
+     * @param id
+     * @return {@link UserDataVO}
+     */
+    @GetMapping("get_user_left_join_user_other/{id}")
+    public UserDataVO getUserLeftJoinUserOther(@PathVariable Long id) {
+        return userService.getUserLeftJoinUserOther(id);
+    }
 }

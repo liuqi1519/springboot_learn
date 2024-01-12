@@ -26,4 +26,6 @@ public interface UserMapper {
     int updateUser(@Param("user") User user);
 
     int deleteUser(@Param("id") Long id);
+
+    UserDataVO getUserLeftJoinUserOther(@Param("id") Long id);
 }

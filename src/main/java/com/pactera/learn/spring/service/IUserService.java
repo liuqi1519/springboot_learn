@@ -49,4 +49,11 @@ public interface IUserService {
      * @return {@link Boolean}
      */
     public Boolean deleteUser(Long id);
+
+    /**
+     * 获取用户详细信息
+     * @param id
+     * @return {@link UserDataVO}
+     */
+    public UserDataVO getUserLeftJoinUserOther(Long id);
 }
