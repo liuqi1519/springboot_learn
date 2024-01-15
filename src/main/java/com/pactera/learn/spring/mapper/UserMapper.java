@@ -28,4 +28,6 @@ public interface UserMapper {
     int deleteUser(@Param("id") Long id);
 
     UserDataVO getUserLeftJoinUserOther(@Param("id") Long id);
+
+    UserDataVO testException(@Param("id") Long id);
 }

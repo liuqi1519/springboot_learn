@@ -1,6 +1,7 @@
 package com.pactera.learn.spring.service.impl;
 
 import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.pactera.learn.spring.exception.ServiceException;
 import com.pactera.learn.spring.mapper.UserMapper;
 import com.pactera.learn.spring.model.dto.UserDataDTO;
 import com.pactera.learn.spring.model.entity.User;
@@ -63,5 +64,11 @@ public class UserServiceImpl implements IUserService {
     @Override
     public UserDataVO getUserLeftJoinUserOther(Long id) {
         return userMapper.getUserLeftJoinUserOther(id);
+    }
+
+    @Override
+    public UserDataVO testException(Long id){
+        throw new ServiceException("testException 抛出的自定义异常");
+//        return userMapper.testException(id);
     }
 }

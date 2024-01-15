@@ -105,4 +105,9 @@
         WHERE
             user.id = #{id}
     </select>
+
+    <select id="testException" parameterType="long" resultMap="userResult">
+        <include refid="selectUserSql"/>
+        WHERE id = #{id}
+    </select>
 </mapper>

@@ -84,4 +84,15 @@ public class UserController {
     public UserDataVO getUserLeftJoinUserOther(@PathVariable Long id) {
         return userService.getUserLeftJoinUserOther(id);
     }
+
+    /**
+     * 测试异常处理
+     * @param id
+     * @return {@link UserDataVO}
+     */
+    @GetMapping("test_exception/{id}")
+    public UserDataVO testException(@PathVariable Long id)
+    {
+        return userService.testException(id);
+    }
 }

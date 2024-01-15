@@ -56,4 +56,11 @@ public interface IUserService {
      * @return {@link UserDataVO}
      */
     public UserDataVO getUserLeftJoinUserOther(Long id);
+
+    /**
+     * 测试异常处理
+     * @param id
+     * @return {@link UserDataVO}
+     */
+    public UserDataVO testException(Long id);
 }
