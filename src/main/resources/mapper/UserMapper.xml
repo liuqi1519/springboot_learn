@@ -110,4 +110,11 @@
         <include refid="selectUserSql"/>
         WHERE id = #{id}
     </select>
+
+    <delete id="testTransactionalDeleteUser"
+            parameterType="long">
+        DELETE
+        FROM user
+        WHERE id = #{idabc}
+    </delete>
 </mapper>

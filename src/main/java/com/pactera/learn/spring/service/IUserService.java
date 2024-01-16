@@ -3,6 +3,7 @@ package com.pactera.learn.spring.service;
 import com.pactera.learn.spring.model.dto.UserDataDTO;
 import com.pactera.learn.spring.model.entity.User;
 import com.pactera.learn.spring.model.vo.UserDataVO;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -63,4 +64,11 @@ public interface IUserService {
      * @return {@link UserDataVO}
      */
     public UserDataVO testException(Long id);
+
+    /**
+     * 测试事务处理
+     * @param dto
+     * @return {@link Boolean}
+     */
+    public Boolean testTransactional(UserDataDTO dto);
 }

@@ -1,6 +1,5 @@
 package com.pactera.learn.spring.service.impl;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.pactera.learn.spring.exception.ServiceException;
 import com.pactera.learn.spring.mapper.UserMapper;
 import com.pactera.learn.spring.model.dto.UserDataDTO;
@@ -8,7 +7,10 @@ import com.pactera.learn.spring.model.entity.User;
 import com.pactera.learn.spring.model.vo.UserDataVO;
 import com.pactera.learn.spring.service.IUserService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -67,8 +69,22 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public UserDataVO testException(Long id){
-        throw new ServiceException("testException 抛出的自定义异常");
-//        return userMapper.testException(id);
+    public UserDataVO testException(Long id) {
+        throw new ServiceException("测试异常处理testException 抛出的自定义异常");
+    }
+
+    @Override
+    @Transactional
+    public Boolean testTransactional(UserDataDTO dto) {
+        User user = new User();
+        BeanUtils.copyProperties(dto, user);
+        try {
+            if (userMapper.updateUser(user) > 0) {
+                return userMapper.testTransactionalDeleteUser(5L) > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
