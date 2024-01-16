@@ -78,13 +78,13 @@ public class UserServiceImpl implements IUserService {
     public Boolean testTransactional(UserDataDTO dto) {
         User user = new User();
         BeanUtils.copyProperties(dto, user);
-        try {
-            if (userMapper.updateUser(user) > 0) {
-                return userMapper.testTransactionalDeleteUser(5L) > 0;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+//        try {
+        if (userMapper.updateUser(user) > 0) {
+            return userMapper.testTransactionalDeleteUser(5L) > 0;
         }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return false;
     }
 }
