@@ -7,10 +7,8 @@
     <list default="true" id="6051e133-901d-47de-86b9-dc4303a659ec" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <workItem from="1705038378218" duration="1000" />
       <workItem from="1705296898570" duration="10557000" />
       <workItem from="1705368547932" duration="14242000" />
-      <workItem from="1705458132602" duration="683000" />
+      <workItem from="1705458132602" duration="3554000" />
     </task>
     <servers />
   </component>

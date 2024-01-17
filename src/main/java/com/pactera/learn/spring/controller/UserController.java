@@ -122,7 +122,7 @@ public class UserController {
      * @param id
      * @return {@link UserDataVO}
      */
-    @Cacheable("testCache")
+    @Cacheable(value = "testCache", key = "#id")
     @GetMapping("test_cache/{id}")
     public UserDataVO testCache(@PathVariable Long id) {
         System.out.println("Fetching user from the database: " + id);
