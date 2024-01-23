@@ -1,14 +1,22 @@
 package com.pactera.learn.spring.controller;
 
+import com.pactera.learn.spring.common.MinioTemplate;
 import com.pactera.learn.spring.common.R;
 import com.pactera.learn.spring.model.dto.UserDataDTO;
 import com.pactera.learn.spring.model.vo.UserDataVO;
 import com.pactera.learn.spring.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 @RestController
@@ -17,6 +25,9 @@ public class UserController {
 
     @Resource
     private IUserService userService;
+
+    @Autowired
+    private MinioTemplate minioTemplate;
 
     /**
      * 获取用户
@@ -36,6 +47,7 @@ public class UserController {
      * @return {@link UserDataVO}
      */
     @GetMapping("get_user_list")
+//    @Cacheable(value = "getUserList", key = "#dto.id")    多条件查询的list不建议用缓存
     public List<UserDataVO> getUserList(UserDataDTO dto) {
         return userService.getUserList(dto);
     }
@@ -122,7 +134,7 @@ public class UserController {
      * @param id
      * @return {@link UserDataVO}
      */
-    @Cacheable(value = "testCache", key = "#id")
+    @Cacheable("testCache")
     @GetMapping("test_cache/{id}")
     public UserDataVO testCache(@PathVariable Long id) {
         System.out.println("Fetching user from the database: " + id);
@@ -131,6 +143,7 @@ public class UserController {
 
     /**
      * 测试清除缓存
+     *
      * @param id
      * @return {@link String}
      */
@@ -145,6 +158,7 @@ public class UserController {
 
     /**
      * 测试共通相应体 Result 的封装（多条）
+     *
      * @param dto
      * @return {@link UserDataVO}
      */
@@ -155,11 +169,52 @@ public class UserController {
 
     /**
      * 测试共通相应体 Result 的封装（单条）
+     *
      * @param id
      * @return {@link UserDataVO}
      */
     @GetMapping("/test_result_r_one/{id}")
     public R<UserDataVO> testResultROne(@PathVariable Long id) {
-        return R.success("获取单挑数据成功", userService.getUser(id));
+        return R.success("获取单条数据成功", userService.getUser(id));
+    }
+
+    /**
+     * 上传文件
+     *
+     * @param file
+     * @return {@link Boolean}
+     */
+    @PostMapping("/upload/")
+    public Boolean upload(@RequestParam("file") MultipartFile file) {
+        if (!file.isEmpty()) {
+            try {
+                String uploadDir = "upload/20240123";
+                File uploadDirFile = new File(uploadDir);
+                if (!uploadDirFile.exists()) {
+                    uploadDirFile.mkdirs();
+                }
+                Path filePath = Path.of(uploadDir, file.getOriginalFilename());
+                Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("File uploaded: " + file.getOriginalFilename());
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 上传头像
+     *
+     * @param file
+     * @return {@link String}
+     * @throws Exception
+     */
+    @PostMapping("uploadAvatar")
+    public String uploadAvatar(@RequestParam("file") MultipartFile file) throws Exception {
+        return minioTemplate.putObject(file.getInputStream(), file.getContentType());
     }
 }

@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6051e133-901d-47de-86b9-dc4303a659ec" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/common/MinioTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/config/MinioConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/config/MinioProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ab14d99-cc07-4db1-aed6-1828e2b1a158.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7ab14d99-cc07-4db1-aed6-1828e2b1a158.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ab14d99-cc07-4db1-aed6-1828e2b1a158/storage_v2/_src_/schema/m245_magento.Hkhcag.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7ab14d99-cc07-4db1-aed6-1828e2b1a158/storage_v2/_src_/schema/m245_magento.Hkhcag.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2aqFoCRyGcyxwtN4kxJxy2gn2kV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,9 +59,15 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pactera.learn.spring.common" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SpringBootLearnGit" />
@@ -79,7 +95,13 @@
       <workItem from="1705038378218" duration="1000" />
       <workItem from="1705296898570" duration="10557000" />
       <workItem from="1705368547932" duration="14242000" />
-      <workItem from="1705458132602" duration="3554000" />
+      <workItem from="1705458132602" duration="6825000" />
+      <workItem from="1705540067577" duration="1263000" />
+      <workItem from="1705543894201" duration="639000" />
+      <workItem from="1705544554268" duration="3616000" />
+      <workItem from="1705652224860" duration="1893000" />
+      <workItem from="1705888198770" duration="4299000" />
+      <workItem from="1705971572288" duration="10427000" />
     </task>
     <servers />
   </component>
