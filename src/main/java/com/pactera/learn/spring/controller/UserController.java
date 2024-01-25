@@ -213,7 +213,7 @@ public class UserController {
      * @return {@link String}
      * @throws Exception
      */
-    @PostMapping("uploadAvatar")
+    @PostMapping("/uploadAvatar/")
     public String uploadAvatar(@RequestParam("file") MultipartFile file) throws Exception {
         return minioTemplate.putObject(file.getInputStream(), file.getContentType());
     }
