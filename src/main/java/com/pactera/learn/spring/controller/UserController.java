@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -188,7 +190,13 @@ public class UserController {
     public Boolean upload(@RequestParam("file") MultipartFile file) {
         if (!file.isEmpty()) {
             try {
-                String uploadDir = "upload/20240123";
+                // 获取当前日期和时间
+                Date currentDate = new Date();
+                // 创建一个SimpleDateFormat对象，指定输出格式为yyyy/MM/dd
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+                // 格式化当前日期
+                String formattedDate = formatter.format(currentDate);
+                String uploadDir = "upload/" + formattedDate;
                 File uploadDirFile = new File(uploadDir);
                 if (!uploadDirFile.exists()) {
                     uploadDirFile.mkdirs();
