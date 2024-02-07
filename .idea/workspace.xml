@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6051e133-901d-47de-86b9-dc4303a659ec" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/upload/20240123/bookmarks_2022_7_25_谷歌收藏夹.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ApifoxUploaderProjectSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/P0149896.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lkadoc接口文档.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/config/Knife4jConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/config/SwaggerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/LKADemoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/TestMybatisPlusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/mapper/TestMybatisPlusMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/model/entity/TestMybatisPlus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/service/ITestMybatisPlusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/service/impl/TestMybatisPlusServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +31,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -28,6 +42,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -39,29 +56,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pactera.learn.spring.mapper" />
+      <recent name="com.pactera.learn.spring.model.entity" />
       <recent name="com.pactera.learn.spring.common" />
     </key>
   </component>
@@ -104,7 +123,17 @@
       <workItem from="1705992059604" duration="2546000" />
       <workItem from="1706066028416" duration="4327000" />
       <workItem from="1706238991020" duration="754000" />
-      <workItem from="1706246949399" duration="974000" />
+      <workItem from="1706246949399" duration="6042000" />
+      <workItem from="1706491383967" duration="3967000" />
+      <workItem from="1706579775696" duration="8762000" />
+      <workItem from="1706662545355" duration="10490000" />
+      <workItem from="1706748456417" duration="5794000" />
+      <workItem from="1706757944262" duration="1015000" />
+      <workItem from="1706768005806" duration="5164000" />
+      <workItem from="1706836202728" duration="4258000" />
+      <workItem from="1707010236428" duration="6005000" />
+      <workItem from="1707096235749" duration="8276000" />
+      <workItem from="1707182464959" duration="4798000" />
     </task>
     <servers />
   </component>
@@ -124,5 +153,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pactera/learn/spring/service/impl/TestMybatisPlusServiceImpl.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
